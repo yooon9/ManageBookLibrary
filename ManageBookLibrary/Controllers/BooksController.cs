@@ -18,12 +18,10 @@ namespace ManageBookLibrary.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private readonly DataContext _context;
         private readonly IMediator _mediator;
 
-        public BooksController(DataContext context, IMediator mediator)
+        public BooksController(IMediator mediator)
         {
-            _context = context;
             _mediator = mediator;
         }
 
@@ -34,7 +32,7 @@ namespace ManageBookLibrary.Controllers
             var query = new GetAllBooksQuery(title, author, description);
             var books = await _mediator.Send(query);
             return Ok(new { books });
-        }
+        } 
 
         // GET: api/Books/5
         [HttpGet("{id}")]
