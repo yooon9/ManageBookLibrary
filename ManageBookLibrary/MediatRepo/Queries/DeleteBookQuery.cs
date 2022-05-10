@@ -10,9 +10,9 @@ namespace ManageBookLibrary.MediatRepo.Queries
     {
         public int BookId { get; }
 
-        public DeleteBookQuery(int bookIdid)
+        public DeleteBookQuery(int bookId)
         {
-            BookId = bookIdid;
+            BookId = bookId;
         }
     }
 }
